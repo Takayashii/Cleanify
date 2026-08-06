@@ -1,0 +1,16 @@
+{
+  "name": "Cleanify",
+  "description": "Clean, modern and futuristic Spotify theme with an integrated lyrics extension",
+  "preview": "cleanify-banner.png",
+  "readme": "README.md",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "include": ["https://raw.githubusercontent.com/Takayashii/Cleanify/main/theme.js"],
+  "authors": [
+    {
+      "name": "Takayashii",
+      "url": "https://github.com/Takayashii"
+    }
+  ],
+  "tags": ["clean", "futuristic", "minimal", "modern"]
+}

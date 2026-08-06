@@ -7,6 +7,15 @@
 </div>
 <br />
 
+### 📦 Installation (Spicetify Marketplace)
+
+1. Install [Spicetify Marketplace](https://github.com/spicetify/marketplace) (includes Spicetify CLI).
+2. Open Spotify → Marketplace → **Themes**.
+3. Search for **Cleanify** and click **Install**.
+4. Reload when prompted.
+
+<br />
+
 ### 🤝 Contact & Support
 
 Have a question? Feel free to message me!
