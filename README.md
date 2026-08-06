@@ -30,5 +30,6 @@ Have a question? Feel free to message me!
 The project would not have been possible thanks to:
 
 * **[sanoojes](https://github.com/sanoojes):** Cleanify is based & inspired on his "Lucid" Theme.
+* **[Spikerko](https://github.com/Spikerko):** Spicy Lyrics creator, they are built-in with Cleanify.
 
 <p align="right">© 2026 Cleanify.</p>
