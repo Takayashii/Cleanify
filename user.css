@@ -702,6 +702,12 @@ SMOOTH LYRICS
 .cleanify-win-controls .win-close:hover svg {
     transform: scale(1.2);
 }
+.cleanify-win-controls .win-maximize:hover {
+    background: rgba(90, 162, 255, 0.12);
+    color: #5aa2ff;
+    border-color: rgba(90, 162, 255, 0.25);
+    box-shadow: 0 0 16px rgba(90, 162, 255, 0.15);
+}
 
 /* Hide original profile in topbar (clone is in controls) */
 .main-topBar-topbarContentRight > button:has(img.main-avatar-image) {
