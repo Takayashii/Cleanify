@@ -1015,3 +1015,34 @@ body.clean-layout .main-home-filterChipsContainer {
     text-overflow: ellipsis;
 }
 
+/* Performance Mode - disables all visual effects for maximum performance */
+body.cleanify-performance-mode * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+}
+body.cleanify-performance-mode .sp-plus-panel,
+body.cleanify-performance-mode #SpicyLyricsNPVCard,
+body.cleanify-performance-mode #SpicyLyricsPage {
+    display: none !important;
+}
+body.cleanify-performance-mode .next-playing-card {
+    display: none !important;
+}
+body.cleanify-performance-mode .cleanify-dropdown {
+    display: none !important;
+}
+body.cleanify-performance-mode .Root__top-container > .Root__main-view::before,
+body.cleanify-performance-mode .Root__main-view::before,
+body.cleanify-performance-mode .Root__main-view::after {
+    content: none !important;
+}
+body.cleanify-performance-mode .win-close:hover,
+body.cleanify-performance-mode .win-maximize:hover {
+    box-shadow: none !important;
+}
+body.cleanify-performance-mode .sp-plus-panel::after {
+    display: none !important;
+}
+
