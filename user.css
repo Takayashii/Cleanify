@@ -1016,13 +1016,19 @@ body.clean-layout .main-home-filterChipsContainer {
 }
 
 /* Performance Mode - disables all visual effects for maximum performance */
-body.cleanify-performance-mode * {
+body.cleanify-performance-mode :is(*):not(.modal-root):not(.modal-root *) {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     animation-duration: 0s !important;
     transition-duration: 0s !important;
 }
-body.cleanify-performance-mode .sp-plus-panel,
+/* Decorative overlay removal */
+body.cleanify-performance-mode .Root__top-container > .Root__main-view::before,
+body.cleanify-performance-mode .Root__main-view::before,
+body.cleanify-performance-mode .Root__main-view::after {
+    content: none !important;
+}
+/* Element hiding */
 body.cleanify-performance-mode #SpicyLyricsNPVCard,
 body.cleanify-performance-mode #SpicyLyricsPage {
     display: none !important;
@@ -1030,19 +1036,11 @@ body.cleanify-performance-mode #SpicyLyricsPage {
 body.cleanify-performance-mode .next-playing-card {
     display: none !important;
 }
-body.cleanify-performance-mode .cleanify-dropdown {
+body.cleanify-performance-mode .sp-plus-panel::after {
     display: none !important;
-}
-body.cleanify-performance-mode .Root__top-container > .Root__main-view::before,
-body.cleanify-performance-mode .Root__main-view::before,
-body.cleanify-performance-mode .Root__main-view::after {
-    content: none !important;
 }
 body.cleanify-performance-mode .win-close:hover,
 body.cleanify-performance-mode .win-maximize:hover {
     box-shadow: none !important;
-}
-body.cleanify-performance-mode .sp-plus-panel::after {
-    display: none !important;
 }
 
