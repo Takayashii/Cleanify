@@ -692,6 +692,16 @@ SMOOTH LYRICS
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 50%;
+    z-index: 1;
+}
+.cleanify-win-controls .win-minimize {
+    z-index: 2;
+}
+.cleanify-win-controls .win-maximize {
+    z-index: 3;
+}
+.cleanify-win-controls .win-close {
+    z-index: 4;
 }
 .cleanify-win-controls .win-close:hover {
     background: rgba(255, 60, 60, 0.12);
@@ -710,7 +720,9 @@ SMOOTH LYRICS
 }
 
 /* Hide original profile in topbar (clone is in controls) */
-.main-topBar-topbarContentRight > button:has(img.main-avatar-image) {
+.main-topBar-topbarContentRight > button:has(img.main-avatar-image),
+.main-topBar-topbarContentRight > button:has(.main-avatar-image),
+.main-topBar-topbarContentRight > .main-userWidget-box {
     display: none !important;
 }
 
