@@ -3,10 +3,10 @@
     "description":  "Clean, modern and futuristic Spotify theme with an integrated lyrics extension",
     "preview":  "cleanify-banner-v2.png",
     "readme":  "README.md",
-    "usercss":  "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.3-bugfix/user.css",
-    "schemes":  "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.3-bugfix/color.ini",
+    "usercss":  "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.4/user.css",
+    "schemes":  "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.4/color.ini",
     "include":  [
-                    "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.3-bugfix/theme.js"
+                    "https://cdn.jsdelivr.net/gh/Takayashii/Cleanify@v1.0.4/theme.js"
                 ],
     "authors":  [
                     {
