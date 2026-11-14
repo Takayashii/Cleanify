@@ -1172,7 +1172,8 @@ div:has(> [data-testid="home-page"]) > div:first-child {
 }
 
 /* Keep the progress bar centered with equal spacing */
-.playback-bar > .playback-progressbar-container {
+.playback-bar > .playback-progressbar-container,
+.playback-bar > :has([data-testid="playback-progressbar"]) {
     margin: 0 !important;
     margin-inline-start: 0 !important;
 }
@@ -1438,4 +1439,194 @@ body:has([data-testid="user-page"]) .M7ECcaA17LC8UqL2GKVD[style*="background-col
 .main-nowPlayingBar-extraControls button.control-button--active .SaUODI6b8RnhwQ3I5abK.ILKsNjdYE78SEyfujte1:after,
 .main-nowPlayingBar-extraControls button.active .SaUODI6b8RnhwQ3I5abK.ILKsNjdYE78SEyfujte1:after {
   background-color: var(--spice-button) !important;
+}
+
+/* Floating Navbar: vertically center the custom window/profile buttons */
+body.global-nav-floating .cleanify-win-controls {
+  top: calc(var(--panel-gap, 8px) + 8px) !important;
+}
+
+/* Floating Navbar: keep Marketplace category tabs and content below the floating bar */
+body.global-nav-floating .Root__main-view:has(.marketplace-tabBar) .main-topBar-container {
+  top: calc(var(--global-nav-height) - (var(--panel-gap) * 2)) !important;
+}
+
+body.global-nav-floating .Root__main-view:has(.marketplace-tabBar) .main-view-container__scroll-node {
+  padding-top: calc(var(--global-nav-height) - (var(--panel-gap) * 2)) !important;
+}
+
+/* SpicyLyrics NPV card: relocated below the track title/artist (see theme.js) */
+/* Keep the maximize/expand mode working now that the card is nested in the metadata block */
+.Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) .main-nowPlayingView-panel > :has(#SpicyLyricsNPVCard) > :not(#SpicyLyricsNPVCard) {
+  display: none !important;
+}
+
+.Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) .main-nowPlayingView-panel > :has(#SpicyLyricsNPVCard) {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) #SpicyLyricsNPVCard {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+/* ===== Right Sidebar: Modern display mode ===== */
+/* Hide the source/close header for a clean look */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-headerContainerV2 {
+  display: none !important;
+}
+
+/* Panel becomes a clean vertical stack: cover art, title/artist, lyrics */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  padding: 16px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* --- Override SpicyLyrics expanded-mode hiding so cover art stays visible --- */
+body.npv-modern .Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) .main-nowPlayingView-panel > .main-nowPlayingView-nowPlayingWidget:not(#SpicyLyricsNPVCard):not(#SpicyLyricsNPVCard) {
+  display: block !important;
+}
+/* --- ...and so the title/artist row stays visible --- */
+body.npv-modern .Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) .main-nowPlayingView-panel > :has(#SpicyLyricsNPVCard) > .main-nowPlayingView-contextItemInfo:not(#SpicyLyricsNPVCard):not(#SpicyLyricsNPVCard) {
+  display: flex !important;
+}
+/* --- metadata block must grow with the cover art above it (not 100%) --- */
+body.npv-modern .Root__right-sidebar:has(#SpicyLyricsNPVCard.Expanded) .main-nowPlayingView-panel > :has(#SpicyLyricsNPVCard):not(#SpicyLyricsNPVCard) {
+  height: auto !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Cover art */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-panel > .main-nowPlayingView-nowPlayingWidget {
+  flex: 0 0 auto !important;
+  margin: 0 auto !important;
+  width: min(100%, 300px) !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-coverArtContainer {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 44px -16px rgba(0, 0, 0, 0.65) !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-coverArtContainer img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Title / artist row */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  position: relative !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-name {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-overlay,
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-overlay * {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-artists,
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-artists * {
+  font-size: 0.9rem !important;
+  opacity: 0.92 !important;
+  color: var(--spice-subtext, #cbcbcb) !important;
+}
+
+/* Lyrics card fills the remaining space */
+body.npv-modern .Root__right-sidebar #SpicyLyricsNPVCard {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Animated title on track change */
+@keyframes cleanifyTitleIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .main-trackInfo-name.cleanify-title-anim {
+  animation: cleanifyTitleIn 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+/* Credits button */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .cleanify-modern-credits-btn {
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  background: hsla(0, 0%, 100%, 0.08) !important;
+  color: var(--spice-subtext, #b3b3b3) !important;
+  transition: background 0.15s, color 0.15s !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .cleanify-modern-credits-btn:hover {
+  background: hsla(0, 0%, 100%, 0.16) !important;
+  color: var(--spice-text, #fff) !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .cleanify-modern-credits-btn.is-open {
+  background: var(--spice-button, #1db954) !important;
+  color: #000 !important;
+}
+
+/* Credits popover (appears below the title/artist, in that place) */
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .cleanify-modern-credits-pop {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  width: min(320px, 94%) !important;
+  max-height: 52vh !important;
+  overflow: auto !important;
+  z-index: 60 !important;
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  background: var(--spice-card, #181818) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px hsla(0, 0%, 100%, 0.06) !important;
+}
+body.npv-modern .Root__right-sidebar .main-nowPlayingView-contextItemInfo .cleanify-modern-credits-pop section {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Modern: hide the SpicyLyrics "Hide Lyrics" toggle button */
+body.npv-modern #NPVCardToggle {
+  display: none !important;
+}
+
+/* Floating Navbar: keep the right sidebar clear of the floating bar */
+body.global-nav-floating:not(.npv-compact):not(.right-sidebar-auto-hide) .Root__right-sidebar {
+  position: relative !important;
+  top: calc(var(--x-hover-target-top, 74px) - var(--panel-gap, 8px) * 3) !important;
 }
